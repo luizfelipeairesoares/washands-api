@@ -1,4 +1,11 @@
+package api
+
+import GiphyService
+import JsonTransformer
 import spark.Spark.*
+import withError
+import withJsonString
+import withSuccess
 
 fun main(argz: Array<String>) {
 
