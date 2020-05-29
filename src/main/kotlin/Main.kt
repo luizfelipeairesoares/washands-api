@@ -1,15 +1,13 @@
-import spark.Spark
+import spark.Spark.*
 
 fun main(argz: Array<String>) {
 
     val port = System.getenv("PORT")?.toInt() ?: 4567
 
-    Spark.port(port)
-
-    Spark.staticFiles.location("/public")
+    port(port)
 
     //region Ping
-    Spark.get("/ping") { request, response ->
+    get("/ping") { request, response ->
         try {
             response.withSuccess()
         } catch (e: Exception) {
@@ -17,5 +15,14 @@ fun main(argz: Array<String>) {
         }
     }
     //endregion
+
+    get("/gifs") { request, response ->
+        try {
+            val gifs = GiphyService().fetchGifs()
+            response.withJsonString(JsonTransformer().render(gifs))
+        } catch (e: Exception) {
+            response.withError(e)
+        }
+    }
 
 }
