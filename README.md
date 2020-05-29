@@ -4,6 +4,8 @@ API for [Wash Hands iOS project](https://github.com/luizfelipeairesoares/wash-ha
 The idea of this project is to provide a simple API that will be used in the iOS project.
 Right now, I'm using [Spark framework](http://sparkjava.com/), writing code in Kotlin.
 
+I'm hosting this app in [Heroku](https://www.heroku.com/).
+
 ## Next Steps
  - Add a Changelog file
  - Add an authentication layer using Firebase?
