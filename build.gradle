@@ -15,6 +15,7 @@ dependencies {
     implementation "org.slf4j:slf4j-simple:1.7.24"
     implementation "com.google.code.gson:gson:2.6.2"
     implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.11.0"
+    implementation "io.github.rybalkinsd:kohttp:0.10.0"
 }
 
 compileKotlin {
