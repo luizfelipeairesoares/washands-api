@@ -1,18 +1,31 @@
-plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
-}
-
-group 'org.example'
+group 'com.github.luizfelipeairesoares'
 version '1.0-SNAPSHOT'
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+apply plugin: 'java'
+
+buildscript {
+    ext.kotlin_version = '1.3.72'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
 
 sourceSets {
     main.java.srcDirs += 'src/main/kotlin/'
     main.resources.srcDirs += 'src/main/'
 }
 
+mainClassName = "api.MainKt"
+
 jar {
     manifest {
-        attributes 'Main-Class': 'MainKt'
+        attributes 'Main-Class': 'api.MainKt'
     }
 
     // This line of code recursively collects and copies all of a project's files
